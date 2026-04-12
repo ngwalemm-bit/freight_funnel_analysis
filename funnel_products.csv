@@ -1,0 +1,26 @@
+Product_ID,Product_Name,Product_Category,Weight_KG,Hazardous_Flag,Perishable_Flag,Standard_Transit_Profile
+1,Product_1,Electronics,3.48,No,Yes,Standard
+2,Product_2,Clothing,73.91,Yes,No,Standard
+3,Product_3,Electronics,10.28,Yes,Yes,Special Handling
+4,Product_4,Clothing,71.89,No,Yes,Express
+5,Product_5,Food,28.54,Yes,Yes,Special Handling
+6,Product_6,Chemicals,34.68,Yes,Yes,Express
+7,Product_7,Electronics,10.18,Yes,No,Express
+8,Product_8,Food,27.19,Yes,No,Special Handling
+9,Product_9,Electronics,97.34,No,Yes,Special Handling
+10,Product_10,Machinery,83.11,No,Yes,Special Handling
+11,Product_11,Electronics,5.54,Yes,No,Standard
+12,Product_12,Clothing,86.78,No,No,Express
+13,Product_13,Machinery,17.1,No,Yes,Special Handling
+14,Product_14,Machinery,70.48,Yes,Yes,Special Handling
+15,Product_15,Clothing,17.18,No,No,Special Handling
+16,Product_16,Food,22.74,No,Yes,Standard
+17,Product_17,Electronics,80.7,No,No,Standard
+18,Product_18,Clothing,91.4,No,Yes,Special Handling
+19,Product_19,Chemicals,40.17,No,Yes,Express
+20,Product_20,Clothing,25.42,No,No,Special Handling
+21,Product_21,Chemicals,36.84,Yes,No,Standard
+22,Product_22,Electronics,86.25,Yes,Yes,Special Handling
+23,Product_23,Chemicals,60.04,No,No,Special Handling
+24,Product_24,Chemicals,53.38,Yes,Yes,Special Handling
+25,Product_25,Food,75.34,No,Yes,Express
