@@ -5,9 +5,9 @@ This project analyzes the quote-to-booking funnel in a freight forwarding busine
 ## Project Overview
 
 The goal of this project is to analyse the client conversion funnel within a freight forwarding business, from quote request through to shipment completion, in order to identify:
-### 	Where potential clients drop off
-### 	What factors influence conversion
-### 	Key operational inefficiencies affecting revenue
+#### 	Where potential clients drop off
+#### 	What factors influence conversion
+#### 	Key operational inefficiencies affecting revenue
 
 
 ## Business Problem
@@ -16,19 +16,19 @@ Where are we losing potential clients in the quote-to-booking process?
 Despite high quote volumes, only a small percentage convert into actual shipments. This analysis investigates the root causes behind this gap.
 
 ## Tools Used
-### 	Excel → Data cleaning & initial exploration
-### 	SQL (PostgreSQL) → Data transformation & analysis
-### Power BI → Dashboard & visualization
+#### 	Excel → Data cleaning & initial exploration
+#### 	SQL (PostgreSQL) → Data transformation & analysis
+#### Power BI → Dashboard & visualization
 
 ## Dataset Description
 
 The dataset contains 4,000 quote records across the following funnel stages:
-	1.	Quote Requested
- 	2.	Quote Sent
-	3.	Quote Viewed
-	4.	Quote Accepted
-	5.	Shipment Booked
-	6.	Shipment Completed
+#### 1.	Quote Requested
+#### 2.	Quote Sent
+#### 3.	Quote Viewed
+#### 4.	Quote Accepted
+#### 5.	Shipment Booked
+#### 6.	Shipment Completed
 
 #### It also includes:
 ##### Pricing data
