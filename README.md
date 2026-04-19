@@ -5,9 +5,9 @@ This project analyzes the quote-to-booking funnel in a freight forwarding busine
 ## Project Overview
 
 The goal of this project is to analyse the client conversion funnel within a freight forwarding business, from quote request through to shipment completion, in order to identify:
-•	Where potential clients drop off
-•	What factors influence conversion
-•	Key operational inefficiencies affecting revenue
+### 	Where potential clients drop off
+### 	What factors influence conversion
+### 	Key operational inefficiencies affecting revenue
 
 
 ## Business Problem
@@ -16,39 +16,40 @@ Where are we losing potential clients in the quote-to-booking process?
 Despite high quote volumes, only a small percentage convert into actual shipments. This analysis investigates the root causes behind this gap.
 
 ## Tools Used
-	•	Excel → Data cleaning & initial exploration
-	•	SQL (PostgreSQL) → Data transformation & analysis
-	•	Power BI → Dashboard & visualization
+### 	Excel → Data cleaning & initial exploration
+### 	SQL (PostgreSQL) → Data transformation & analysis
+### Power BI → Dashboard & visualization
 
 ## Dataset Description
+
 The dataset contains 4,000 quote records across the following funnel stages:
-	1.	Quote Requested
-	2.	Quote Sent
-	3.	Quote Viewed
-	4.	Quote Accepted
-	5.	Shipment Booked
-	6.	Shipment Completed
+### 	1.	Quote Requested
+### 	2.	Quote Sent
+### 	3.	Quote Viewed
+### 	4.	Quote Accepted
+### 	5.	Shipment Booked
+### 	6.	Shipment Completed
 
 #### It also includes:
-	•	Pricing data
-	•	Response times
-	•	Customer segments
-	•	Drop-off reasons
-	•	Routes and sales reps
+##### Pricing data
+##### Response times
+##### Customer segments
+##### Drop-off reasons
+##### Routes and sales reps
 
 ## Data Cleaning 
 
 Data cleaning was performed in both Excel and SQL to ensure analytical accuracy.
 
 #### Key steps (Excel):
-•	Standardized Customer Segment values (e.g. SME, sme → SME)
-•	Removed invalid numeric values:
-•	Quoted amounts = 0
-•	Negative response times
-•	Fixed drop-off logic:
-•	Removed drop-off stages/reasons for Booked/Completed records
-•	Handled missing values appropriately
-•	Ensured correct data types for numerical analysis (especially pricing)
+##### Standardized Customer Segment values (e.g. SME, sme → SME)
+##### Removed invalid numeric values:
+##### Quoted amounts = 0
+##### Negative response times
+##### Fixed drop-off logic:
+##### Removed drop-off stages/reasons for Booked/Completed records
+##### Handled missing values appropriately
+##### Ensured correct data types for numerical analysis (especially pricing)
 
 ### Exploratory Analysis (Excel)
 Initial analysis was conducted using pivot tables to understand:
@@ -58,11 +59,12 @@ Funnel Distribution
 •	Accepted: 682
 •	Completed: 452
 •	Booked: 228
-Drop-Off Insights
-* Highest drop-off occurs at:
-•	Quote Sent
-•	Quote Viewed
-•	Quote Accepted
+
+### Drop-Off Insights
+#### Highest drop-off occurs at:
+##### Quote Sent
+##### Quote Viewed
+##### Quote Accepted
 
 #### Key Observation
 A large portion of quotes fail to progress beyond early stages, indicating inefficiencies in conversion despite strong initial customer interest.
@@ -150,10 +152,10 @@ GROUP BY quote_status
 ORDER BY total_quotes DESC;
 ```
 
-	•	Majority of quotes are stuck in early stages:
-	•	Sent (34%)
-	•	Viewed (31%)
-	•	Suggests strong lead generation but weak conversion
+#### Majority of quotes are stuck in early stages:
+#### Sent (34%)
+#### Viewed (31%)
+#### Suggests strong lead generation but weak conversion
 
 ### 3. Drop-Off Drivers
 
@@ -168,10 +170,10 @@ GROUP BY drop_off_reason
 ORDER BY total_dropoffs DESC;
 ```
 
-Top reasons:
-•	Competitor Won (17.6%)
-•	Route Constraint (16.86%)
-•	No Feedback (16.72%)
+### Top reasons:
+#### Competitor Won (17.6%)
+#### Route Constraint (16.86%)
+#### No Feedback (16.72%)
 
 Drop-offs are evenly distributed across multiple causes, suggesting that conversion issues are multi-dimensional rather than driven by a single factor. Other contributing factors may include competitive pressure, weak routing strategies, and poor internal tracking processes.
 
@@ -191,8 +193,8 @@ AND quoted_amount_usd > 0
 GROUP BY conversion_group;
 ```
 
-•	Converted avg: 10,569 USD
-•	Not converted avg: 10,674 USD
+#### Converted avg: 10,569 USD
+#### Not converted avg: 10,674 USD
 
 Price has some influence on conversion, but the difference is small, indicating that pricing alone does not explain performance gaps.
 
@@ -211,8 +213,8 @@ WHERE response_time_hours IS NOT NULL
 GROUP BY conversion_group;
 ```
 
-•	Converted: 35.91 hrs
-•	Not Converted: 36.41 hrs
+#### Converted: 35.91 hrs
+#### Not Converted: 36.41 hrs
 
 Faster response times slightly improve conversion, suggesting speed plays a role in competitiveness.
 
@@ -270,9 +272,9 @@ ORDER BY conversion_rate_pct ASC;
 ```
 
 Low-performing routes include:
-•	Germany → UK
-•	China → UK
-•	South Africa → India
+#### Germany → UK
+#### China → UK
+#### South Africa → India
 
 Conversion varies significantly by route, indicating that carrier relationships and route optimization impact success.
 
@@ -298,12 +300,13 @@ GROUP BY sales_rep_id
 ORDER BY conversion_rate_pct DESC;
 ```
 
-•	Best: ~20.79%
-•	Lowest: ~12.77%
+#### Best: ~20.79%
+#### Lowest: ~12.77%
 
 Performance varies across sales reps, suggesting differences in customer targeting, follow-up, or engagement strategies.
 
 ## Key Insights
+
 ### The business generates strong quote volume but fails to convert effectively
 ### Conversion issues are caused by a combination of:
 #### Competitive pressure
@@ -312,40 +315,56 @@ Performance varies across sales reps, suggesting differences in customer targeti
 ### Pricing matters, but is not the primary driver
 ### Customer segment and sales rep behavior significantly influence outcomes
 
+## Power BI Dashboard
+The Power BI dashboard provides a visual representation of the client conversion funnel, highlighting where and why potential clients drop off, as well as key factors influencing conversion.
 
+### Dashboard Overview
+
+![App Screenshot](images/funnel.png)
+
+### Key Dashboard Insights:
+
+#### ⁠The majority of quotes remain in early funnel stages (Sent & Viewed), confirming low conversion efficiency
+#### ⁠Drop-off reasons are distributed across multiple factors, with competitor pricing, route constraints, and lack of feedback being the most prominent
+#### ⁠Faster response times are associated with higher conversion rates
+#### ⁠Enterprise clients show higher conversion efficiency compared to SMEs
+#### ⁠Pricing differences between converted and non-converted quotes are minimal, suggesting non-price factors play a significant role
 
 ## Business Recommendations
 ### 1. Improve Operational Efficiency
-	•	Strengthen post-quote follow-ups
-	•	Align pricing, operations, and sales teams
+#### Strengthen post-quote follow-ups
+#### Align pricing, operations, and sales teams
 
 
 ### 2. Optimize Route Strategy
-	•	Improve carrier partnerships
-	•	Focus on high-performing trade lanes
+#### Improve carrier partnerships
+#### Focus on high-performing trade lanes
 
 
 ### 3. Reduce Response Time
-	•	Implement SLAs for quote turnaround
-	•	Automate parts of the quoting process
+#### Implement SLAs for quote turnaround
+#### Automate parts of the quoting process
 
 
 ### 4. Improve Data Tracking
-	•	Enforce mandatory drop-off reason logging
-	•	Reduce “No Feedback” gaps
+#### Enforce mandatory drop-off reason logging
+#### Reduce “No Feedback” gaps
 
 ### 5. Refine Sales Strategy
-	•	Train low-performing reps
-	•	Focus on high-conversion client segments
+#### Train low-performing reps
+#### Focus on high-conversion client segments
+
 ## Conclusion
+
 While there is strong client interest, operational gaps, routing limitations, and inconsistent sales execution significantly reduce revenue potential.
 
-Overall, the business does not have a demand problem — it has a *conversion efficiency problem*, which presents a clear opportunity for improvement through better alignment between sales, pricing, and operations.
+Overall, the business does not have a demand problem — it has a *conversion efficiency problem, which presents a clear opportunity for improvement through better alignment between sales, pricing, and operations.
 
 ## Limitations
 
-* High number of missing drop-off reasons reduces clarity
-* Dataset is synthetic (simulated), may not reflect real-world constraints fully
-* External factors (market competition, client budgets) not captured
-
+#### High number of missing drop-off reasons reduces clarity
+#### Dataset is synthetic (simulated), may not reflect real-world constraints fully
+#### External factors (market competition, client budgets) not captured
+#### ⁠Drop-off reason data contains inconsistencies (blank vs “No Feedback”), which may slightly affect categorization
+#### ⁠Dataset is simulated and may not reflect real-world operational complexity
 
