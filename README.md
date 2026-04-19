@@ -241,7 +241,6 @@ ORDER BY conversion_rate_pct DESC;
 ```
 
 ##### |Segment	Conversion Rate
-##### |_________________________
 ##### |SME	         |  17.22%
 ##### |Retail	     | 15.87%
 ##### |Manufacturing | 14.90%
