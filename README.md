@@ -240,12 +240,11 @@ GROUP BY customer_segment
 ORDER BY conversion_rate_pct DESC;
 ```
 
-|Segment	Conversion Rate
-|_________________________
-|Enterprise	   | 19.75%    
-|SME	         |  17.22%
-|Retail	       | 15.87%
-|Manufacturing | 14.90%
+##### |Segment	Conversion Rate
+##### |_________________________
+##### |SME	         |  17.22%
+##### |Retail	     | 15.87%
+##### |Manufacturing | 14.90%
 
 Enterprise clients convert best, likely due to established relationships, while SMEs generate more quotes but convert less efficiently. SMEs drive traffic, enterprises drive revenue.
 
