@@ -54,11 +54,11 @@ Data cleaning was performed in both Excel and SQL to ensure analytical accuracy.
 ### Exploratory Analysis (Excel)
 Initial analysis was conducted using pivot tables to understand:
 Funnel Distribution
-•	Sent: 1369
-•	Viewed: 1269
-•	Accepted: 682
-•	Completed: 452
-•	Booked: 228
+#### •	Sent: 1369
+#### •	Viewed: 1269
+#### •	Accepted: 682
+#### •	Completed: 452
+#### •	Booked: 228
 
 ### Drop-Off Insights
 #### Highest drop-off occurs at:
