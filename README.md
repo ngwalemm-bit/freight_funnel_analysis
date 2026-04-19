@@ -23,12 +23,12 @@ Despite high quote volumes, only a small percentage convert into actual shipment
 ## Dataset Description
 
 The dataset contains 4,000 quote records across the following funnel stages:
-### 	1.	Quote Requested
-### 	2.	Quote Sent
-### 	3.	Quote Viewed
-### 	4.	Quote Accepted
-### 	5.	Shipment Booked
-### 	6.	Shipment Completed
+	1.	Quote Requested
+ 	2.	Quote Sent
+	3.	Quote Viewed
+	4.	Quote Accepted
+	5.	Shipment Booked
+	6.	Shipment Completed
 
 #### It also includes:
 ##### Pricing data
